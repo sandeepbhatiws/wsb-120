@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Position</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			list-style: none;
+		}
+		.outer{
+			width: 100%;
+			background-color: black;
+		}
+		.row{
+			width: 1400px;
+			margin: 0px auto;
+			background-color: white;
+			display: flex;
+			flex-wrap: wrap;
+			padding: 20px 0px;
+		}
+		.column{
+			box-shadow: 0px 0px 5px 2px gray;
+			flex-basis: 30%;
+			margin: 0px 1.5%;
+			border-radius: 15px;
+			text-align: center;
+			overflow: hidden;
+			position: relative;
+		}
+		.column-image img{
+			width: 100%;
+			border-top-left-radius: 15px;
+			border-top-right-radius: 15px;
+		}
+		.column h2{
+			padding: 10px 15px;
+		}
+		.column p{
+			padding: 10px 15px;
+			overflow: hidden;
+		}
+		.position{
+			position: absolute;
+			top: 25px;
+			background-color: rgb(0,0,0,0.3);
+			color: white;
+
+			opacity: 0;
+			/*display: none;*/
+		}
+		.column:hover .position{
+			/*display: block;*/
+			opacity: 1;
+		}
+		.menu{
+			background: red;
+			width: 1400px;
+			margin: auto;
+			display: flex;
+			position: relative;
+		}
+		.menu>ul{
+			display: flex;
+
+		}
+		.menu>ul>li {
+			padding: 10px;
+			color: white;
+			font-size: 18px;
+			font-weight: bold;
+			transition: 5s;
+			
+		}
+		.submenu{
+			position: absolute;
+			background: black;
+			z-index: 1;
+			width: 400px;
+			top: 100%;
+			left: 0px;
+			/*opacity: 0;*/
+			display: none;
+		}
+		.submenu li{
+			border-bottom: 1px solid gray;
+			padding: 15px;
+		}
+		.menu>ul>li:hover .submenu{
+			/*opacity: 1;*/
+			transition: 5s;
+			display: block;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="menu">
+			<img src="images/1.jpg" width="200px">
+			<ul>
+				<li>Home</li>
+				<li>gallery</li>
+				<li>
+					courses
+					<ul class="submenu">
+						<li>HTML</li>
+						<li>HTML 5</li>
+						<li>Css</li>
+						<li>CSS 3</li>
+					</ul>
+				</li>
+				<li>enquiry</li>
+				<li>contact us</li>
+			</ul>
+		</div>
+		<div class="row">
+			<div class="column">
+				<div class="column-image">
+					<img src="images/1.jpg">
+				</div>
+				<div class="position">
+					<h2>Free Masterclasses</h2>
+					<p>Expert-led, interactive live sessions designed to deepen your knowledge and skills in your chosen domain of interest. Expert-led, interactive live sessions designed to deepen your knowledge and skills in your chosen domain of interest. Expert-led, interactive live sessions designed to deepen your knowledge and skills in your chosen domain of interest. Expert-led, interactive live sessions designed to deepen your knowledge and skills in your chosen domain of interest.</p>
+				</div>
+			</div>
+			<div class="column">
+				<div class="column-image">
+					<img src="images/1.jpg">
+				</div>
+				<div class="position">
+					<h2>Free Masterclasses</h2>
+					<p>Expert-led, interactive live sessions designed to deepen your knowledge and skills in your chosen domain of interest.</p>
+				</div>
+			</div>
+			<div class="column">
+				<div class="column-image">
+					<img src="images/1.jpg">
+				</div>
+				<div class="position">
+					<h2>Free Masterclasses</h2>
+					<p>Expert-led, interactive live sessions designed to deepen your knowledge and skills in your chosen domain of interest.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

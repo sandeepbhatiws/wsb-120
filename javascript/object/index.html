@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Objects</title>
+    </head>
+    <body>
+
+        <input type="text" class="form" id="user" placeholder="Enter name" value="" onkeyup="dataGet(this)"/>
+    </body>
+    <script>
+
+        function dataGet(data){
+            console.log(data.value);
+        }
+
+        var userInfo = {
+            email : 'sumit@gmail.com',
+            name : 'Sumit',
+            mobile_number : '1234567890'
+        }
+
+        // document.write(userInfo.name+'<br>');
+        // document.write(userInfo.email+'<br>');
+        // document.write(userInfo.mobile_number);
+
+        var userDetails = [
+            {
+                name : 'Sumit',
+                email : 'sumit@gmail.com',
+                mobile_number : '1234567890'
+            },
+            {
+                email : 'ravi@gmail.com',
+                name : 'Ravi',
+                mobile_number : '1234567890'
+            }
+        ]
+
+        // console.log(userDetails[1].name);
+
+
+        document.write('<table border="1">');
+        document.write('<thead>');
+        document.write('<tr>');
+            document.write('<th>S.no</th>');
+        document.write('<th>Name</th>');
+        document.write('<th>Email</th>');
+        document.write('<th>Mobile Number</th>');
+        document.write('</tr>');
+        document.write('</thead>');
+        document.write('<tbody>');
+        
+        userDetails.forEach((data,index) => {
+            // console.log(index);
+
+            document.write('<tr>');
+            document.write('<td>'+ (index+1) +'</td>');
+            document.write('<td>'+ data.name +'</td>');
+            document.write('<td>Email</td>');
+            document.write('<td>Mobile Number</td>');
+            document.write('</tr>');
+        })
+
+        document.write('</tbody>');
+        document.write('</table>');
+    </script>
+</html>

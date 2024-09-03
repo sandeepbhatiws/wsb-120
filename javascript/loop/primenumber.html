@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <title>Title</title>
+   </head>
+           
+   <body>
+           
+   </body>
+
+   <script>
+
+    var number = parseInt(prompt('enter the number'));
+    var status = '';
+
+    for(var i = 2; i < number; i++){
+
+        if((number % i) == 0){
+            var status = 'Not a prime number';
+            // document.write('Not a prime number <br>');
+            break;
+        } else {
+            var status = 'Prime number';
+            // document.write('prime number <br>');
+        }
+    }
+
+    document.write(status+' <br>');
+
+   </script>
+           
+</html>

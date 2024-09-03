@@ -1,0 +1,47 @@
+@media only screen and (min-width: 769px) and (max-width: 1024px ) {
+
+	.header{
+		padding: 15px;
+	}
+
+}
+
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+	.header{
+		padding: 15px;
+	}
+}
+
+@media only screen and (min-width: 321px) and (max-width: 426px) {
+	.header{
+		padding: 15px;
+		flex-direction: column;
+	}
+	.chatwithus {
+		font-size: 14px;
+		padding: 10px;
+		line-height: 0px;
+	}
+	.callus{
+		font-size: 14px;
+		padding: 10px;
+		line-height: 0px;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	.header{
+		padding: 15px;
+		flex-direction: column;
+	}
+	.chatwithus {
+		font-size: 14px;
+		padding: 10px;
+		line-height: 0px;
+	}
+	.callus{
+		font-size: 14px;
+		padding: 10px;
+		line-height: 0px;
+	}
+}

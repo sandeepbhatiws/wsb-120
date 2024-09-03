@@ -1,0 +1,112 @@
+
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <title>Title</title>
+
+       <style>
+            .color{
+                width: 500px;
+                height: 200px;
+                background-color: black;
+                color: white;
+                font-size: 20px;
+                margin-top: 50px;
+            }
+            .main{
+                width: 500px;
+                margin: auto;
+                text-align: center;
+                display: flex;
+                padding-top: 50px;
+                justify-content: space-between;
+            }
+            .hours{
+                padding: 20px;
+                background-color: black;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+            }
+            .minutes{
+                padding: 20px;
+                background-color: black;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+            }
+            .seconds{
+                padding: 20px;
+                background-color: black;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+            }
+            .days{
+                padding: 20px;
+                background-color: black;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+            }
+       </style>
+   </head>
+           
+   <body>
+    <div class="main">
+        <div class="days">
+            0 days
+        </div>
+        <div class="hours">
+            0 hours
+        </div>
+        <div class="minutes">
+            0 minutes
+        </div>
+        <div class="seconds">
+            0 seconds
+        </div>
+    </div>
+   </body>
+<script>
+
+    function  getTime(){
+
+        var date = '22 August 2024 04:00 PM';
+
+        var endDate = new Date(date);
+        var startDate = new Date();
+
+        var diffrence = endDate-startDate;  // get value in milliseconds
+        diffrence = diffrence / 1000; // get value in seconds
+
+
+        // 1 day = 24hrs
+        // 1 hr = 60 min
+        //60 min = 3600 sec
+
+        if(diffrence > 0){
+
+            var days = Math.floor(diffrence/3600/24);
+            var hours = Math.floor( (diffrence/3600) % 24 );
+            var minutes = Math.floor( (diffrence / 60) % 60 );
+            var seconds = Math.floor( (diffrence) % 60 );
+
+            // console.log(days);
+
+
+            document.querySelector('.days').innerHTML = days+' days';
+            document.querySelector('.hours').innerHTML = hours+' hours';
+            document.querySelector('.minutes').innerHTML = minutes+' minutes';
+            document.querySelector('.seconds').innerHTML = seconds+' seconds';
+
+        }
+
+    }
+
+    window.setInterval(getTime,1000);
+    
+</script>
+</html>

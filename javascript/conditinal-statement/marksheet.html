@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <title>MarkSheet</title>
+   </head>
+           
+   <body>
+           
+   </body>
+   <script>
+    var subject1 = parseInt(prompt('enter the value of subject 1'));
+    var subject2 = parseInt(prompt('enter the value of subject 2'));
+    var subject3 = parseInt(prompt('enter the value of subject 3'));
+    var subject4 = parseInt(prompt('enter the value of subject 4'));
+    var subject5 = parseInt(prompt('enter the value of subject 5'));
+
+    var total = subject1+subject2+subject3+subject4+subject5;
+    var percentage = (total*100)/500;
+
+    document.write('Total Marks :- '+total);
+    document.write('<br>');
+
+    document.write('Percentage :- '+percentage);
+    document.write('<br>');
+
+    if(subject1 > 100 || subject2 > 100 || subject3 > 100 || subject4 > 100 || subject5 > 100){
+        document.write('Invalid Marks');
+    } else if(percentage >= 60){
+        document.write('First Division');
+    } else if(percentage >= 48 || percentage < 60){
+        document.write('Second Division');
+    } else if(percentage < 48 || percentage >= 36){
+        document.write('Third Division');
+    } else {
+        document.write('failed');
+    }
+
+   </script>
+</html>

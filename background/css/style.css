@@ -1,0 +1,25 @@
+.outer-div{
+			border:1px solid red;
+			width: 1000px;
+			margin: auto;
+			height: 1000px;
+		}
+		.row1{
+			background-image: url("../images/1.jpg");
+			color: white;
+			width: 1000px;
+			height: 200px;
+			background-position: right top;
+			/*background-size: cover;*/
+			/*padding: 20px;*/
+		}
+		.row2{
+			background-image: url("../images/3.jpg");
+			background-repeat: no-repeat;
+			/*background-size: cover;*/
+			color: white;
+			width: 1000px;
+			height: 800px;
+			background-position: center center;
+			/*padding: 20px;*/
+		}

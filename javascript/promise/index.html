@@ -1,0 +1,98 @@
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <title>Promise</title>
+       <style>
+            .outer{
+                width: 1400px;
+                margin: auto;
+            }
+            .heading h1{
+                background-color: gray;
+                text-align: center;
+            }
+            .row{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .items{
+                flex-basis: 23%;
+                margin: 1%;
+                text-align: center;
+                box-shadow: 0px 0px 5px 2px gray;
+            }
+            .items img{
+                width: 100%;
+            }
+            .items h2{
+                padding: 15px;
+            }
+
+       </style>
+   </head>
+           
+   <body>
+        <div class="outer">
+            <div class="heading">
+                <h1>Products</h1>
+            </div>
+            <div class="row" id="products">
+                
+            </div>
+        </div>
+   </body>
+
+   <script>
+
+    const promise = new Promise((resolve,reject) => {
+        
+        var result = fetch('https://dummyjson.com/products');
+
+        resolve(result);
+        // console.log(result);
+
+    }).then((success) => {
+        const mypromise = new Promise((resolve,reject) => {
+
+            resolve(success.json());
+
+        }).then((success) => {
+            fetchProducts(success.products);
+            console.log('Data fetch successfully !!');
+        }).catch((error) => {
+            console.log('Something went wrong !!');
+        })
+        
+    }).catch((error) => {
+        
+    });
+
+
+    function fetchProducts(products){
+
+        var allProducts = '';
+
+        products.forEach((data,index) => {
+            
+            allProducts += `<div class="items">
+                    <div>
+                        <img src="${ data.thumbnail }"/>
+                    </div>
+                    <h2>${ data.title }</h2>
+                </div>`;
+
+        });
+
+        document.getElementById('products').innerHTML = allProducts;
+
+        console.log(products);
+    }
+
+
+   </script>
+           
+</html>

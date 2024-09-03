@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <title>Title</title>
+       <style>
+        .main{
+            border: 1px solid black;
+            width: 600px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .column{
+            flex-basis: 200px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            padding: 40px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .color{
+            background-color: black;
+            color: white;
+            background-image: url('images/1.jpg');
+            background-size: 100% 100%;
+        }
+       </style>
+   </head>
+           
+   <body>
+        <div class="main">
+            <div class="column" onmouseover="addbgColor(this)" onmouseout="removeBgColor(this)">1</div>
+            <div class="column" onmouseover="addbgColor(this)" onmouseout="removeBgColor(this)">2</div>
+            <div class="column" onmouseover="addbgColor(this)" onmouseout="removeBgColor(this)">3</div>
+            <div class="column" onmouseover="addbgColor(this)" onmouseout="removeBgColor(this)">4</div>
+            <div class="column" onmouseover="addbgColor(this)" onmouseout="removeBgColor(this)">5</div>
+            <div class="column" onmouseover="addbgColor(this)" onmouseout="removeBgColor(this)">6</div>
+            <div class="column" onmouseover="addbgColor(this)" onmouseout="removeBgColor(this)">7</div>
+            <div class="column" onmouseover="addbgColor(this)" onmouseout="removeBgColor(this)">8</div>
+            <div class="column" onmouseover="addbgColor(this)" onmouseout="removeBgColor(this)">9</div>
+        </div>   
+        
+
+        <button id="button">Click Me</button>
+   </body>
+
+   <script>
+        
+        var numbers = [];
+
+        function addbgColor(color){
+            
+            text = color.innerText;
+
+            if(numbers.length < 9){
+                color.classList.add('color');
+            }
+
+            if(numbers.includes(text)){
+            } else {
+                numbers.push(text);
+            }
+            console.log(numbers);            
+        }
+
+        function removeBgColor(color){
+            color.classList.remove('color');
+        }
+
+
+        function hello(){
+            console.log('welcome');
+        }
+
+        document.getElementById('button').addEventListener('click',hello);
+   </script>
+           
+</html>

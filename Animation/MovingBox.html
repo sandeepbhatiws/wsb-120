@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Moving Box </title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 1000px;
+            height: 600px;
+            margin: 50px auto;
+            border: 0.1px solid red;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-image: url('images/1.jpg');
+            background-position: center center;
+            background-size: cover;
+            animation: movingbox 10s linear 2s infinite;
+        }
+
+        @keyframes movingbox {
+            0% {
+                transform: translate(0px,0px);
+            }
+            25% {
+                transform: translate(800px,0px);
+            }
+            50% {
+                transform: translate(800px,400px);
+            }   
+            75% {
+                transform: translate(0px,400px);
+            }
+            100% {
+                transform: translate(0px,0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+</html>

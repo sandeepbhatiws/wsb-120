@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Change Background Color </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 320px;
+            padding: 20px 40px;
+            margin: 50px auto;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            background-color: #0560AF;
+            border-radius: 20px 20px 0px 20px;
+            animation: changebg 0.5s 2s alternate infinite;
+        }
+
+        @keyframes changebg {
+            from {
+
+                background-color: #0560AF;
+            }
+
+            to {
+                background-color: #FFD046;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <i class="fa-solid fa-phone-volume"></i>
+        +91-888888888
+    </div>  
+</body>
+</html>

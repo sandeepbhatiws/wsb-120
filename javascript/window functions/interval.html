@@ -1,0 +1,62 @@
+
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <title>Title</title>
+
+       <style>
+            button{
+                padding: 10px 15px;
+                text-align: center;
+                border-radius: 30px;
+                margin-top: 30px;
+            }
+
+            .color{
+                width: 500px;
+                height: 200px;
+                background-color: black;
+                color: white;
+                font-size: 20px;
+                margin-top: 50px;
+            }
+            .main{
+                width: 500px;
+                margin: auto;
+                text-align: center;
+            }
+       </style>
+   </head>
+           
+   <body>
+    <div class="main">
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+
+        <div class="color">
+            0
+        </div>
+    </div>
+   </body>
+<script>
+
+    var t;
+    var i = 0;
+
+    function colorChange(){
+        i++;
+        console.log(i);
+        document.querySelector('.color').innerHTML = i;
+    }
+
+    function start(){
+        t = setInterval(colorChange,1000);
+    }
+
+    function stop(){
+        clearInterval(t);
+    }
+</script>
+</html>

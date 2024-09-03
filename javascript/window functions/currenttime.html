@@ -1,0 +1,81 @@
+
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <title>Title</title>
+
+       <style>
+            .color{
+                width: 500px;
+                height: 200px;
+                background-color: black;
+                color: white;
+                font-size: 20px;
+                margin-top: 50px;
+            }
+            .main{
+                width: 500px;
+                margin: auto;
+                text-align: center;
+                display: flex;
+                padding-top: 50px;
+                justify-content: space-between;
+            }
+            .hours{
+                padding: 20px;
+                background-color: black;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+            }
+            .minutes{
+                padding: 20px;
+                background-color: black;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+            }
+            .seconds{
+                padding: 20px;
+                background-color: black;
+                color: white;
+                text-align: center;
+                font-weight: bold;
+            }
+       </style>
+   </head>
+           
+   <body>
+    <div class="main">
+        <div class="hours">
+            0 hours
+        </div>
+        <div class="minutes">
+            0 minutes
+        </div>
+        <div class="seconds">
+            0 seconds
+        </div>
+    </div>
+   </body>
+<script>
+
+    function  getTime(){
+        var date = new Date();
+
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+
+        document.querySelector('.hours').innerHTML = hours+' hours';
+        document.querySelector('.minutes').innerHTML = minutes+' minutes';
+        document.querySelector('.seconds').innerHTML = seconds+' seconds';
+
+    }
+
+    window.setInterval(getTime,1000);
+    
+</script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <title>Title</title>
+       <link rel="stylesheet" href="">
+   </head>
+           
+   <body>
+           
+   </body>
+
+   <script>
+    // // var numbers = []; // Empty Array
+    // var numbers = [40,32,'hello','welcome',45]; //  Array with values (indexed array)
+
+
+    // numbers[7] = 'rohan';
+    // // numbers[3] = 'rohan';
+
+    // // document.write(numbers[5]);
+
+    // console.log(numbers.push('wscubetech',2024,'hello')); // output will be length  // add value at the end
+    // numbers.push('wscubetech',2024,'hello');  // add values in the array
+
+    // console.log(numbers);
+
+
+    var numbers = [40,32,'hello','welcome',45];
+
+    var newArray = numbers.pop();
+    numbers.push('wscubetech',2024,'hello');
+    var newArray1 = numbers.pop();
+    numbers.pop();
+    
+
+    // console.log(numbers.length);
+    // document.write(numbers);
+    // console.log(numbers.toString());
+    // console.log(numbers.length);
+
+    for(var i = 0; i < numbers.length; i++ ){
+        document.write(i+ '.'+numbers[i]+'<br>');
+    }
+
+
+    var numbers = [45,32,50,99,100,23,56,31];
+    var min = numbers[0];
+
+    for(var i = 0; i< numbers.length; i++){
+        
+        if(numbers[i] < min){
+            min = numbers[i];
+        }
+    }
+
+    console.log(min);
+
+    var secondmin = numbers[0];
+
+    for(var i = 0; i< numbers.length; i++){
+        
+        if( (numbers[i] > min) && (numbers[i] < secondmin)){
+            secondmin = numbers[i];
+        }
+    }
+
+    console.log(secondmin);
+
+   </script>
+</html>

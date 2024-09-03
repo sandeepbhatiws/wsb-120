@@ -1,0 +1,44 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: black;
+}
+
+.row{
+	/*width: 1200px;*/
+	/*min-width: 1000px;*/
+	max-width: 1200px;
+	/*height: 300px;*/
+	margin: auto;
+	background-color: white;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.mainheading h1{
+	text-align: center;
+	color: white;
+	padding: 20px;
+}
+.column{
+	padding: 10px;
+	flex-basis: 23%;
+	margin: 1%;
+	text-align: center;
+	border: 1px solid gray;
+}
+.header{
+	text-align: center;
+	font-weight: bold;
+	font-size: 24px;
+	padding: 15px;
+	background-color: red;
+	color: white;
+}

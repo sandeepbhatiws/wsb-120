@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Slide Box </title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .main {
+            width: 1400px;
+            padding: 10px;
+            border: 0.1px solid red;
+            margin: 50px auto;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-image: url('images/2.jpg');
+            background-position: center center;
+            background-size: cover;
+            border: 0.1px solid black;
+            transform: translateX(-400px);
+            /* animation-name: slidebox;
+            animation-duration: 3s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: 2;
+            animation-direction: alternate; */
+            animation: slidebox 3s linear 2s alternate infinite;
+        }
+
+        @keyframes slidebox {
+
+            0% {
+                background-image: url('images/3.jpg');
+                transform: translateX(-400px);
+            }
+
+            100% {
+                background-image: url('images/4.jpg');
+                transform: translateX(1500px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

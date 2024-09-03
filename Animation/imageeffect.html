@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wave Effect</title>
+	<style type="text/css">
+		body{
+			text-align: center;
+		}
+		.row{
+			border : 5px solid red;
+			width: 400px;
+			height: 300px;
+			margin: auto;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.image1{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			transition: 5s;
+		}
+		.image1 img{
+			width: 100%;
+			height: 100%;
+		}
+
+		.image2{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			transform: translate(-400px,0px);
+			transition: 5s;
+		}
+		.image2 img{
+			width: 100%;
+			height: 100%;
+		}
+
+		.image3{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			transform: translate(-800px,0px);
+			transition: 5s;
+		}
+		.image3 img{
+			width: 100%;
+			height: 100%;
+		}
+		.row:hover .image1 {
+			transform: translate(800px,0px);
+		}
+		.row:hover .image2 {
+			transform: translate(400px,0px);
+		}
+		.row:hover .image3 {
+			transform: translate(0px,0px);
+		}
+
+		
+	</style>
+</head>
+<body>
+
+	<div class="row">
+		<div class="image1">
+			<img src="images/1.jpg">
+		</div>
+		<div class="image2">
+			<img src="images/2.jpg">
+		</div>
+		<div class="image3">
+			<img src="images/3.jpg">
+		</div>
+	</div>
+</body>
+</html>

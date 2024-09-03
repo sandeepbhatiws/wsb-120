@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <title>DOM Traversing Methods</title>
+       <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            .row{
+                max-width: 1400px;
+                border: 0px solid red;
+                margin: auto;
+            }
+            .column{
+                border: 1px solid gray;
+                margin: 15px 0px;
+            }
+            .column h2 {
+                background-color: black;
+                color: white;
+                padding: 10px 15px;
+            }
+            .column p{
+                padding: 10px 15px;
+            }
+       </style>
+   </head>
+           
+   <body>
+        <button id="childern">Childern</button>
+        <button id="parent_node">Parent Node</button>
+        <button id="first_child">First Child</button>
+        <button id="last_child">Last child</button>
+        <button id="next_sibling">Next Siblings</button>
+        <button id="prev_sibling">Previos Siblings</button>
+
+        <div class="row" id="row">
+            <div class="column" id="column1">
+                <h2 class="faqquestions">1. Lorem ipsum dolor sit amet consectetur ?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestiae esse iure cum exercitationem perspiciatis aliquam aperiam eum. Veniam ea at expedita unde, porro reprehenderit illo consectetur voluptatum facilis non.</p>
+            </div>
+            <div class="column" id="column2">
+                <h2>2. Lorem ipsum dolor sit amet consectetur ?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestiae esse iure cum exercitationem perspiciatis aliquam aperiam eum. Veniam ea at expedita unde, porro reprehenderit illo consectetur voluptatum facilis non.</p>
+            </div>
+            <div class="column" id="column3">
+                <h2>3. Lorem ipsum dolor sit amet consectetur ?</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio molestiae esse iure cum exercitationem perspiciatis aliquam aperiam eum. Veniam ea at expedita unde, porro reprehenderit illo consectetur voluptatum facilis non.</p>
+            </div>
+        </div>
+   </body>
+    <script>
+        document.getElementById('childern').addEventListener('click',(event) => {
+            var childern = document.querySelector('.row').children;
+
+            console.log(childern);
+        })
+
+        document.getElementById('parent_node').addEventListener('click',(event) => {
+
+            var parent_node = document.querySelector('.faqquestions').parentNode;
+
+            console.log(parent_node);
+        })
+
+        document.getElementById('first_child').addEventListener('click',(event) => {
+            var first_child = document.getElementById('row').lastElementChild;
+            console.log(first_child);
+        })
+
+        document.getElementById('next_sibling').addEventListener('click',(event) => {
+            var next_sibling = document.getElementById('column1').nextElementSibling;
+            console.log(next_sibling);
+        })
+
+        document.getElementById('prev_sibling').addEventListener('click',(event) => {
+            var prev_sibling = document.getElementById('column1').previousElementSibling;
+            console.log(prev_sibling);
+        })
+    </script>
+</html>

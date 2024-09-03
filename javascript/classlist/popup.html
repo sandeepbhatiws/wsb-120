@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Title -->
+  <title>Simple Page</title>
+  <style>
+    .popup{
+        position: fixed;
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        background-color: white;
+        left: 50%;
+        top: 50%;
+        display: none;
+        transform: translate(-50%,-50%);
+    }
+    .display{
+        display: block;
+    }
+  </style>
+</head>
+<body>
+    <div class="popup" id="popup">
+        <span class="close" onclick="closepopup()">&times;</span>
+        <div>this is a popup</div>
+    </div>
+
+    <button onclick="showpopup()"> popup</button>
+</body>
+
+<script>
+    function showpopup(){
+        document.getElementById('popup').classList.add('display');
+    }
+
+    function closepopup(){
+        document.getElementById('popup').classList.remove('display');
+    }
+</script>
+</html>

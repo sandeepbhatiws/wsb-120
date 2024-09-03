@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Title -->
+  <title>Simple Page</title>
+  <style>
+    .row{
+        margin-top: 30px;
+    }
+
+    .color{
+        background-color: black;
+        color: white;
+    }
+  </style>
+</head>
+<body>
+
+    <button onclick="addClass()">Add</button>
+    <button onclick="removeClass()">Remove</button>
+    <button onclick="toggleClass()">Toggle</button>
+
+    <div class="row" id="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. A repellat dolorum repellendus maiores nobis ut, necessitatibus eaque in nulla hic voluptate atque ad repudiandae quo quam esse doloremque explicabo iste?</div>
+</body>
+
+<script>
+    function addClass(){
+        document.getElementById('content').classList.add('color');
+    }
+    function removeClass(){
+        document.getElementById('content').classList.remove('color');
+    }
+
+    function toggleClass(){
+        document.getElementById('content').classList.toggle('color');
+    }
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <title>Title</title>
+   </head>
+           
+   <body>
+           
+   </body>
+
+   <script>
+
+    var number = parseInt(prompt('enter the number'));
+    var sum = 0;
+
+    for(var i = 1; i < number; i++){
+
+        if((number % i) == 0){
+            sum += i;
+        }
+    }
+
+    if(sum == number){
+        document.write('Perfect number');
+    } else {
+        document.write('not perfect number');
+    }
+    
+
+   </script>
+           
+</html>
