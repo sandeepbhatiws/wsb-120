@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 
-export default function HomeContent({data}) {
+export default function HomeContent({data,faqgetId, setFaqId}) {
 
   // let { heading, description, children } = props;
-
-  let [faqgetId, setFaqId] = useState('');
 
   // console.log(faqgetId);
 

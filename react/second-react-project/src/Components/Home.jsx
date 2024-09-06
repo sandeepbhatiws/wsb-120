@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import HomeContent from './HomeContent'
 import posts from '../assets/common_data/posts.js'
 
 export default function Home() {
 
     var heading = 'Home Page';
+
+    let [faqgetId, setFaqId] = useState('');
 
     var homeContent = 'His mother had always taught him';
     var description = "His mother had always taught him not to ever think of himself as better than others. He'd tried to live by this motto. He never looked down on those who were less fortunate or who had less money than him. But the stupidity of the group of people he was talking to made him change his mind.";
@@ -47,7 +49,7 @@ export default function Home() {
                 {
                     posts.map((v,i) => {
                         return(
-                            <HomeContent data={v} key={i}/>
+                            <HomeContent data={v} key={i} faqgetId = { faqgetId }setFaqId = { setFaqId}/>
                         )
                     })
                 }

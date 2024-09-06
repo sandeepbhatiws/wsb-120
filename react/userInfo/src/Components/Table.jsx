@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Table({userData, setUserData}) {
+export default function Table({userData, setUserData, input, setInput}) {
 
     const deleteUser = (index) =>{
         if(confirm('Are you sure you want to delete ?')){
@@ -8,6 +8,20 @@ export default function Table({userData, setUserData}) {
             var finalData = [...userData];
             setUserData(finalData);
         }
+    }
+
+    const editUser = (index) => {
+        var edit = userData[index];
+
+        setInput({
+            "id": edit.id,
+            "name": edit.name,
+            "email": edit.email,
+            "mobile": edit.mobile,
+            "country": edit.country
+        })
+        
+        console.log(edit);
     }
 
     
@@ -36,7 +50,8 @@ export default function Table({userData, setUserData}) {
                                 <td>{value.email}</td>
                                 <td>{value.mobile}</td>
                                 <td>{value.country}</td>
-                                <td><button type="button" onClick={() => deleteUser(index) } >Delete</button></td>
+                                <td><button type="button" onClick={() => deleteUser(index) } >Delete</button>
+                                <button type="button" onClick={() => editUser(index) } >Edit</button></td>
                             </tr>
                         )
                     })
