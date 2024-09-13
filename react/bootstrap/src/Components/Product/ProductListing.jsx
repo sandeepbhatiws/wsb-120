@@ -7,16 +7,28 @@ export default function ProductListing() {
 
     let [products, setProducts] = useState([]);
     let [categories, setCategories] = useState([]);
+    var [categoryName, setCategoryName] = useState([]);
+    let [filter, setFilter] = useState(false);
+    let [loader, setLoader] = useState(true);
 
     useEffect(() => {
-        axios.get('https://wscubetech.co/ecommerce-api/products.php?limit=30')
+        // axios.get(`https://wscubetech.co/ecommerce-api/products.php?limit=30&categories=${categoryName}`)
+        
+
+        axios.get('https://wscubetech.co/ecommerce-api/products.php',{
+            params:{
+                limit: 30,
+                categories : categoryName,
+            }
+        })
             .then((success) => {
                 setProducts(success.data.data);
+                setLoader(false);
             })
             .catch((error) => {
 
             });
-    },[]);
+    },[filter]);
 
     useEffect(() => {
         axios.get('https://wscubetech.co/ecommerce-api/categories.php')
@@ -36,9 +48,9 @@ export default function ProductListing() {
         <div class="container-fluid container-xl">
             <div class="row main-content ml-md-0">
             
-            <FilterSideBar categories={categories}/>
+            <FilterSideBar categories={categories} categoryName={categoryName} setCategoryName={setCategoryName} filter={filter} setFilter={setFilter} loader ={loader} setLoader = {setLoader} />
 
-            <ProductFilter products={ products }/>
+            <ProductFilter products={ products } loader ={loader} setLoader = {setLoader}/>
             </div>
         </div>
         </div>

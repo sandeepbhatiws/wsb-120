@@ -1,6 +1,22 @@
 import React from 'react'
 
-export default function FilterSideBar({ categories }) {
+export default function FilterSideBar({ categories, categoryName, setCategoryName, filter, setFilter, loader, setLoader }) {
+
+    const saveFilter = (slug) => {
+        if(categoryName.includes(slug)){
+            var category = categoryName.filter((v,i) => {
+                if(v != slug){
+                    return v;
+                }
+            })
+            setCategoryName(category);
+        } else {
+            categoryName.push(slug);
+            setCategoryName(categoryName);
+        }
+        setFilter(!filter);
+        setLoader(true);
+    }
   return (
     <div class="sidebar col-md-3 px-0">
         <h1 class="border-bottom filter-header d-flex d-md-none p-3 mb-0 align-items-center">
@@ -20,8 +36,8 @@ export default function FilterSideBar({ categories }) {
                     categories.map((category,index) => {
                         return(
                             <div class="custom-control custom-checkbox mb-3">
-                                <input type="checkbox" class="custom-control-input" id="Outdoor"/>
-                                <label class="custom-control-label" for="Outdoor"> {  category.name }</label>
+                                <input type="checkbox" class="custom-control-input" id={category.slug} onClick={ () => saveFilter(category.slug) }/>
+                                <label class="custom-control-label" for={category.slug}> {  category.name }</label>
                             </div>
                         )
                     })

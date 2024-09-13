@@ -1,8 +1,10 @@
 import React from 'react'
 import ProductCard from './ProductCard'
+import ProductLoading from '../Loader/ProductLoading'
 
-export default function ProductFilter({ products }) {
+export default function ProductFilter({ products, loader, setLoader }) {
     
+    console.log(loader);
 
   return (
     <div class="content col-md-9">
@@ -35,12 +37,28 @@ export default function ProductFilter({ products }) {
                 <div class="row row-grid">
 
                     {
+                        (loader==1) 
+                        ?
+                            <>
+                                <ProductLoading/>
+                                <ProductLoading/>
+                                <ProductLoading/>
+                                <ProductLoading/>
+                                <ProductLoading/>
+                                <ProductLoading/>
+                            </>
+                        :
                         products.map((data,index) => {
                             return(
                                 <ProductCard product={data}/>
                             )
                         })
                     }
+
+
+                    
+
+                    
                     
                 </div>
             </div>
