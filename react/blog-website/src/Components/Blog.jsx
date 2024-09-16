@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Blog({blog}) {
   return (
@@ -11,11 +12,11 @@ export default function Blog({blog}) {
                     Thursday, August 29, 2024
                 </div>
                 <div class="mt-2 text-base/7 font-medium">
-                    <a data-headlessui-state="" href={`/blog-details/${blog.id}`}>
+                    <Link data-headlessui-state="" to={`/blog-details/${blog.id}/${blog.title}`}>
                         <span class="absolute inset-0">
                         </span>
                         {blog.title}
-                    </a>
+                    </Link>
                 </div>
                 <div class="mt-2 flex-1 text-sm/6 text-gray-500">
                     {/* {blog.body} */}
