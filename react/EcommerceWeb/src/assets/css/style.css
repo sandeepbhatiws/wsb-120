@@ -1,0 +1,70 @@
+.bg-color-navbar {
+    background-color: rgb(0, 120, 173);
+}
+.bg-pleace {
+    background-color: rgb(12, 82, 115);
+    color: aliceblue;
+    /* border-bottom: 2px solid black ; */
+
+}
+.link-texty {
+    color: rgb(199, 80%, 12%) !important;
+}
+.card-inner {
+    height: 400px;
+
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.card-inner-2 {
+    height: 210px;
+
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.card-hover-2 {
+    border: 2px solid skyblue;
+
+    /* overflow: hidden */
+}
+.card-hover-1:hover .card-hover-2 {
+    border: 3px solid rgb(31, 128, 128);
+    box-shadow: 0 8px 6px -6px black;
+    
+
+
+}
+.card-hover-1:hover .hoverimg {
+    transform: scale(1.1);
+    transition: 3s;
+
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.dropdown {
+    /* outline: 2px solid rgb(158, 197, 254); */
+    outline-offset: 2px;
+    outline: none;
+    border: 2px solid rgb(158, 197, 254);
+
+}
+.Category-1:hover .Category {
+    color: rgb(0, 120, 173);
+
+}
+
+.outer-dropdown :hover.dropdown {
+    background-color: rgb(158, 197, 254);
+}
+
+.newbarthred {
+    position: sticky;
+    top: 75px;
+    z-index: 9;
+    background-color: white;
+
+}
+.card-inner-2:hover .card-inner-3{
+    color: rgb(0, 120, 173);
+}
