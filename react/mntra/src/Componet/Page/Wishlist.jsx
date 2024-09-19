@@ -6,18 +6,44 @@ import { CommonContext } from '../Context/Context';
 
 function Wishlist() {
 
-    let {cartItems, deleteCart} = useContext(CommonContext);
+    let {cartItems, deleteCart, minus, add, emptyCart} = useContext(CommonContext);
 
-    let [quantity,setquantity]=useState(1)
-    let minus=()=>{
-        quantity--;
-        setquantity(quantity)
-    }
-    let add=()=>{
-        // alert('scdsd')
-        quantity++;
-        setquantity(quantity)
-    }
+    var allCartItems = cartItems.map((v,i) => {
+        return(
+            <tr key={i}>
+                <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                {i+1}
+                </td>
+                <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                    {v.name} 
+                </td>
+                <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                    photo
+                </td>
+                <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                    {v.price}
+                </td>
+
+                <td className="flex gap-6 px-5 py-5 text-sm bg-white border-b border-gray-200">
+                <span>
+                    <button className='text-[30px] border border-[black] px-2 ' onClick={()=>minus(v.id)}>-</button> <span>{v.qty}</span> 
+                    <button onClick={()=>add(v.id)} className='text-[30px]'>+</button></span>
+                </td>
+
+                <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                    {v.price * v.qty}
+                </td>
+            
+                <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                    <button className='bg-[black] text-[white] text-bold rounded-[5px] px-[10px] py-[5px]' onClick={() => deleteCart(i)}>Delete</button>
+                </td>
+            </tr>
+        )
+    });
+
+
+    // let [quantity,setquantity]=useState(1)
+    
     return (
         <div>
             <Header />
@@ -89,38 +115,29 @@ function Wishlist() {
 
                 <tbody>
                     {
-                        cartItems.map((v,i) => {
-                            return(
-                                <tr>
-                                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                                    {i+1}
-                                    </td>
-                                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                                        {v.name} 
-                                    </td>
-                                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                                        photo
-                                    </td>
-                                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                                        {v.price}
-                                    </td>
+                        (cartItems.length != 0)
 
-                                    <td className="flex gap-6 px-5 py-5 text-sm bg-white border-b border-gray-200">
-                                    <span>
-                                        <button className='text-[30px] border border-[black] px-2 ' onClick={()=>minus()}>-</button> <span>{v.qty}</span> 
-                                        <button onClick={()=>add()} className='text-[30px]'>+</button></span>
+                        ?
+                        <>
+                            {allCartItems}
+                            <tr className="text-right">
+                                <td colSpan={7} className="px-5 py-5 text-sm bg-white border-b border-gray-200">
+                                    <button className='bg-[black] text-[white] text-bold rounded-[5px] px-[10px] py-[5px]' onClick={() => emptyCart()}>Empty Cart</button>
                                     </td>
+                            </tr>
+                        </>
+                        
 
-                                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                                        {v.price * v.qty}
-                                    </td>
-                                
-                                    <td className="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                                        <button className='bg-[black] text-[white] text-bold rounded-[5px] px-[10px] py-[5px]' onClick={() => deleteCart(i)}>Delete</button>
-                                    </td>
-                                </tr>
-                            )
-                        })
+                        :
+                        
+                        <tr className='text-center'>
+                            <td colSpan={7}>No Record Found !!</td>
+                        </tr>
+                    }
+
+
+                    {
+                        
                     }
 
                     
