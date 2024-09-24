@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {
   Dialog,
   DialogPanel,
@@ -24,9 +24,12 @@ import {
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import { Link } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
+import { CommonContext } from '../Context/Context'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  let {isLogin, logout} = useContext(CommonContext);
 
   return (
     <header className="bg-white">
@@ -60,9 +63,18 @@ export default function Header() {
           </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to="/login-register" className="text-sm font-semibold leading-6 text-gray-900">
+          {
+            isLogin 
+            ? 
+            <div className="text-sm font-semibold leading-6 text-gray-900" onClick={logout}>
+            Logout <span aria-hidden="true">&rarr;</span>
+          </div>
+            :
+            <Link to="/login-register" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </Link>
+          }
+          
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">

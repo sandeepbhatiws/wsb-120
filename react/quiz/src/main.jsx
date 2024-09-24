@@ -16,6 +16,7 @@ import AddQuiz from './Components/AddQuiz.jsx';
 import ViewQuiz from './Components/ViewQuiz.jsx';
 import PlayQuiz from './Components/PlayQuiz.jsx';
 import LoginRegister from './Components/LoginRegister.jsx';
+import Context from './Components/Context/Context.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +31,8 @@ const router = createBrowserRouter(
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Context>
+      <RouterProvider router={router} />
+    </Context>
   </StrictMode>,
 )
