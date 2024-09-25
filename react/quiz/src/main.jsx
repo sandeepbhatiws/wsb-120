@@ -20,7 +20,8 @@ import Context from './Components/Context/Context.jsx';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLevel />}>
+    <Route element={<RootLevel />}>
+      <Route path='/' element={<PlayQuiz/>}></Route>
       <Route path='add-quiz' element={<AddQuiz/>}></Route>
       <Route path='view-quiz' element={<ViewQuiz/>}></Route>
       <Route path='play-quiz' element={<PlayQuiz/>}></Route>
